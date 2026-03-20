@@ -6,7 +6,7 @@ import { Injectable } from "@nestjs/common";
 export class DeleteTodoRepository {
     constructor(private readonly prisma: PrismaService) {}
 
-async execute (id: String){
+async delete (id: String){
    return await this.prisma.todo.delete({where:{id}});
 }
 }

@@ -6,7 +6,7 @@ import { Injectable } from "@nestjs/common";
 export class FindAllTodoRepository {
     constructor(private readonly prisma: PrismaService) {}
 
-async execute (){
+async findAll (){
    return await this.prisma.todo.FindMany();
 }
 }
