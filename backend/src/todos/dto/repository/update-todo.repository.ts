@@ -6,7 +6,7 @@ import { UpdateTodoDto } from "../update-todo.dto";
 export class UpdateTodoRepository {
     constructor(private readonly prisma: PrismaService) {}
 
-async execute (data: UpdateTodoDto){
+async execute ( id: string, data: UpdateTodoDto){
    return await this.prisma.todo.update (data);
 }
 }
