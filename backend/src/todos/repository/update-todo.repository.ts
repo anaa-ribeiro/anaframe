@@ -1,6 +1,6 @@
 import { PrismaService } from "src/shared/databases/prisma.databases";
 import { Injectable } from "@nestjs/common";
-import { UpdateTodoDto } from "../update-todo.dto";
+import { UpdateTodoDto } from "../dto/update-todo.dto";
 
 @Injectable()
 export class UpdateTodoRepository {

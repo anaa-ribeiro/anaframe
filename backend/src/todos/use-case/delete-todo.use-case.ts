@@ -2,7 +2,7 @@ import { Injectable, Logger, NotFoundException } from "@nestjs/common";
 import { DeleteTodoRepository } from "../repository";
 
 @Injectable()
-export class DeleteTodoUseCases {
+export class DeleteTodoUseCase {
     FindTodoByIdRepository: any;
     constructor(
         private readonly deleteTodoRepository: DeleteTodoRepository,

@@ -1,10 +1,10 @@
 import { Injectable, Logger, NotFoundException } from "@nestjs/common";
 import { UpdateTodoRepository } from "../repository";
-import { UpdateTodoDto } from "../update-todo.dto";
+import { UpdateTodoDto } from "../dto/update-todo.dto";
 
 
 @Injectable()
-export class UpdateTodoUseCases {
+export class UpdateTodoUseCase {
     constructor(
         private readonly updateTodoRepository: UpdateTodoRepository,
         private readonly logger: Logger,

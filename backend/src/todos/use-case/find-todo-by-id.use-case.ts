@@ -2,7 +2,7 @@ import { Injectable, Logger } from "@nestjs/common";
 import { FindTodoByIdRepository } from "../repository";
 
 @Injectable()
-export class FindTodoByIdUseCases {
+export class FindTodoByIdUseCase {
     constructor(
         private readonly findTodoByIdRepository: FindTodoByIdRepository,
         private readonly logger: Logger,
