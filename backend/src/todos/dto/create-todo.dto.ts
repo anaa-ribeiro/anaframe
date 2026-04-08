@@ -1,13 +1,11 @@
 export class CreateTodoDto {
-title: String; 
-description: String;
-completed: Boolean; 
-priority: TodoPriority; 
-dueAt: Date;
-completeAr: Date;
-userId: String;
-createdAt: Date;
-updateAt: Date;
+  title: string;
+  description?: string;
+  completed?: boolean;
+  priority?: TodoPriority;
+  dueAt?: Date;
+  completeAr?: Date;
+  userId: string;
 }
 
 enum TodoPriority{

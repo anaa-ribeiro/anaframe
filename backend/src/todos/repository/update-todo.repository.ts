@@ -4,9 +4,9 @@ import { UpdateTodoDto } from "../dto/update-todo.dto";
 
 @Injectable()
 export class UpdateTodoRepository {
-    constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
 
-async execute ( id: string, data: UpdateTodoDto){
-   return await this.prisma.todo.update (data);
-}
+  async execute(id: string, data: UpdateTodoDto) {
+    return this.prisma.todo.update({ where: { id }, data });
+  }
 }
