@@ -1,1 +1,29 @@
-//oi
+import { Controller, Logger, Module } from "@nestjs/common";
+import { JwtModule } from "@nestjs/jwt";
+import { AuthCntroller } from "./auth.controller";
+import { AuthService } from "./auth.service";
+import { JwtStrategy } from "./jwt.strategy";
+import { PrismaService } from "src/shared/databases/prisma.databases";
+import * as UseCases from "./use-cases"
+import * as Repositories from "./repository"
+
+const useCases = Object.values(UseCases)
+const repositories = Object.values(Repositories);
+@Module({
+    imports: [
+        JwtModule.register({
+            secret: process.env.JWT_SECRET,
+            signOptions: { expiresIn: '1d'},
+        }),
+    ],
+    controllers: [ AuthCntroller],
+    providers: [
+        AuthService,
+        JwtStrategy,
+        PrismaService,
+        Logger,
+        ...repositories,
+        ...useCases,
+    ],
+})
+export class AuthModule {}
